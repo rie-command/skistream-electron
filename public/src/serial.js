@@ -4,10 +4,9 @@
 const SerialPort = require('serialport');
 var statusElement = document.getElementById("socket-status");
 var serial = null;
-
+var globalString = '';
 
 function connectToCOMPort(){
-
     var port = document.getElementById("com-port-param").value;
 
     serial && serial.close();
@@ -26,6 +25,7 @@ function connectToCOMPort(){
         console.log("COM data received len: " + data.length + " content: " + JSON.stringify(data));
 
         statusElement.innerHTML = "Receive data";
+        globalString = JSON.stringify(data);
         redrawTable(string2array(JSON.stringify(data)));
     });
 

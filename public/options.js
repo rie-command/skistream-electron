@@ -5,4 +5,4 @@ var options = {
     socket_address: "ws://"+location.hostname+":19003/"
 };
 
-var testString = "Steve Jobs 12334 bill gates 42135";
+var globalString = "Steve Jobs 12334 bill gates 42135";
