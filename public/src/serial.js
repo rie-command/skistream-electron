@@ -1,12 +1,14 @@
 /**
  * Created by sinires on 02.03.17.
  */
-const SerialPort = require('serialport');
-var statusElement = document.getElementById("socket-status");
+
 var serial = null;
 var globalString = '';
 
 function connectToCOMPort(){
+    const SerialPort = require('serialport');
+    var statusElement = document.getElementById("socket-status");
+
     var port = document.getElementById("com-port-param").value;
 
     statusElement.innerHTML = "Try connect";
@@ -42,7 +44,7 @@ function connectToCOMPort(){
     serial.on('error', (e)=>{
         console.log(`COM post err: ${JSON.stringify(e)}`);
 
-        statusElement.innerHTML = "Error";
+        statusElement.innerHTML = `Error ${JSON.stringify(e)}`;
     });
 
     serial.on('disconnect', ()=>{
