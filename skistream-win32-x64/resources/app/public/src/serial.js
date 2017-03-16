@@ -9,7 +9,11 @@ var globalString = '';
 function connectToCOMPort(){
     var port = document.getElementById("com-port-param").value;
 
+    statusElement.innerHTML = "Try connect";
+
     serial && serial.close();
+
+    statusElement.innerHTML = "Try reconnect";
 
     serial = new SerialPort(port, {
         parser: SerialPort.parsers.readline('#13')
