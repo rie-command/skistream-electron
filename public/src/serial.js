@@ -29,13 +29,14 @@ function connectToCOMPort(){
     });
 
     serial.on('data', (data)=>{
-        console.log("COM data received len: " + data.length + " content: " + JSON.stringify(data));
+        // console.log("COM data received len: " + data.length + " content: " + JSON.stringify(data));
 
         dataAsObj = parser.parse(data);
+        redrawTable(dataAsObj);
 
-        statusElement.innerHTML = "Receive data";
-        globalString = JSON.stringify(data);
-        redrawTable(string2array(JSON.stringify(data)));
+        // statusElement.innerHTML = "Receive data";
+        // globalString = JSON.stringify(data);
+        // redrawTable(string2array(JSON.stringify(data)));
     });
 
     serial.on('close', ()=>{
