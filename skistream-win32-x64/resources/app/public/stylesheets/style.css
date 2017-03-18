@@ -6,3 +6,64 @@ body {
 a {
   color: #00B7FF;
 }
+
+#table_data{
+  /*height: 20px !important;*/
+  /*display: table;*/
+  border-collapse: separate !important;
+  border-spacing: 0 10px !important;
+}
+
+.table-row{
+  width: 100%;
+  display: table-row;
+  height: 20px;
+}
+
+.table-cell{
+  display: table-cell;
+  border-radius: 6px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 50px;
+  height: 20px;
+  margin-right: 0;
+}
+
+.Bib{
+  width:20px;
+  background: blue;
+}
+.Name{
+  width:100px;
+  background: lightblue;
+}
+.Team{
+  width:100px;
+  background: lightyellow;
+}
+.±{
+  width:20px;
+  background: green;
+}
+.unuse{
+  width:50px;
+  background: pink;
+}
+.Leader{
+  width:20px;
+  background: yellow;
+}
+.Rank{
+  width:20px;
+  background: grey;
+}
+.Class{
+  width:20px;
+  background: purple;
+}
+
+.Time{
+  width: 40px;
+  background: white;
+}

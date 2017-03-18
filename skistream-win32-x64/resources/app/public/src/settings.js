@@ -38,7 +38,8 @@ function editSettings(element, param) {
 
 function updateStyle() {
     var tableElements = document.querySelectorAll(".table-style"),
-        textElements  = document.querySelectorAll(".text-style");
+        textElements  = document.querySelectorAll(".table-cell");
+        // textElements  = document.querySelectorAll(".text-style");
 
     Object.keys(settings).forEach(
         function (param) {
