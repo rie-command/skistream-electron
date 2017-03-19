@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Coder on 17.03.2017.
  */
 // 1       1       4       Oncourse Bib         R            xx44
@@ -20,7 +20,7 @@ const template = [
     ,[39 ,     8  ,     "±" ]
     ,[47 ,     10 ,     "unuse"]
     ,[57 ,     20 ,     "Leader"]
-    ,[77 ,     11 ,     "Time"  ]
+    ,[77 ,     11 ,     "Timetobeat"]
     ,[88 ,     4  ,     "Rank"  ]
     ,[92 ,     5  ,     "Class" ]
 ]
@@ -36,7 +36,7 @@ const parser = {
         while (len > 2) {//2 - length of '\r'
             template.forEach((el)=>{
                 len -= el[1];
-                r[el[2]] = data.slice(el[0]-1, el[1]-1)
+                r[el[2]] = data.slice(el[0]-1, el[0]-1 + el[1])
             })
 
             res.push(r)

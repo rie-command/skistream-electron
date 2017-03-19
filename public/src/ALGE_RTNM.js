@@ -20,7 +20,7 @@ const template = [
     ,[39 ,     8  ,     "±" ]
     ,[47 ,     10 ,     "unuse"]
     ,[57 ,     20 ,     "Leader"]
-    ,[77 ,     11 ,     "Time"  ]
+    ,[77 ,     11 ,     "Timetobeat"]
     ,[88 ,     4  ,     "Rank"  ]
     ,[92 ,     5  ,     "Class" ]
 ]

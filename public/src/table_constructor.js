@@ -4,12 +4,23 @@
 
 function redrawTable(data) {
     var table = document.getElementById("table_data"),
-        content = "";
+        content = "",
+        newData = [];
 
     if(!data && !data.length) return;
 
-    data.forEach(field => {
-        console.info(field);
+    data.forEach(row => {
+        var newRow = Object.assign({},
+            {['Bib']: row['Bib']},
+            {['Team']: row['Team']},
+            {['Name']: row['Name']},
+            {['Time']: row['Time']},
+            {['Timetobeat']: row['Timetobeat']},
+            {['Rank']: row['Rank']});
+        newData.push(newRow);
+    });
+
+    newData.forEach(field => {
         content += '<div class="table-row">';
             for (let key in field){
                 content += `<div class='table-cell ${key}'>`;
@@ -19,21 +30,6 @@ function redrawTable(data) {
         content += '</div>'
         }
     );
-
-    // data.forEach(
-        // function(field) {
-        //     if (!field && !field.length) return;
-        //     content +='<tr>';
-        //     field.forEach(
-        //         function(cell) {
-        //             content+= '<td class="text-style">';
-        //             content+= cell;
-        //             content+= '</td>';
-        //         }
-        //     );
-        //     content +='</tr>'
-        // }
-    // );
 
     table.innerHTML = content;
     updateStyle();
