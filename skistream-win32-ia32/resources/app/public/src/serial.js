@@ -4,6 +4,7 @@
 
 var serial = null;
 var globalString = '';
+let dataAsObj = {}
 
 function connectToCOMPort(){
     const SerialPort = require('serialport');
@@ -18,7 +19,7 @@ function connectToCOMPort(){
     statusElement.innerHTML = "Try reconnect";
 
     serial = new SerialPort(port, {
-        parser: SerialPort.parsers.readline('#13')
+        parser: SerialPort.parsers.readline('\r')
     });
 
     serial.on('open', ()=>{
@@ -28,11 +29,14 @@ function connectToCOMPort(){
     });
 
     serial.on('data', (data)=>{
-        console.log("COM data received len: " + data.length + " content: " + JSON.stringify(data));
+        // console.log("COM data received len: " + data.length + " content: " + JSON.stringify(data));
 
-        statusElement.innerHTML = "Receive data";
-        globalString = JSON.stringify(data);
-        redrawTable(string2array(JSON.stringify(data)));
+        dataAsObj = parser.parse(data);
+        redrawTable(dataAsObj);
+
+        // statusElement.innerHTML = "Receive data";
+        // globalString = JSON.stringify(data);
+        // redrawTable(string2array(JSON.stringify(data)));
     });
 
     serial.on('close', ()=>{
